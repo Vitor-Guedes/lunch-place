@@ -1,0 +1,13 @@
+{
+    "name": "Ultils",
+    "alias": "ultils",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Ultils\\Providers\\UltilsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

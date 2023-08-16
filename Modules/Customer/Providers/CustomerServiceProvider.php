@@ -3,6 +3,8 @@
 namespace Modules\Customer\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Modules\Customer\Services\CustomerService;
+use Modules\Ultils\Services\Api\HandlerService;
 
 class CustomerServiceProvider
 extends ServiceProvider
@@ -24,7 +26,7 @@ extends ServiceProvider
      */
     public function boot()
     {
-
+        $this->registerConfig();
     }
 
     /**
@@ -35,5 +37,20 @@ extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+    }
+
+    /**
+     * Register config.
+     *
+     * @return void
+     */
+    protected function registerConfig()
+    {
+        $this->publishes([
+            module_path($this->moduleName, 'Config/mocky_test.php') => config_path($this->moduleNameLower . '.php'),
+        ], 'mocky_test');
+        $this->mergeConfigFrom(
+            module_path($this->moduleName, 'Config/mocky_test.php'), $this->moduleNameLower
+        );
     }
 }

@@ -2,8 +2,8 @@
 
 namespace Modules\Customer\Tests\Feature;
 
-use Illuminate\Http\Response;
 use Tests\TestCase;
+use Illuminate\Http\Response;
 
 class CustomerApiTest extends TestCase
 {

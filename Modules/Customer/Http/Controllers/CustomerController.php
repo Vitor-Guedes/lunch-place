@@ -27,6 +27,16 @@ extends Controller
         }
 
         return response()->json([], Response::HTTP_OK);
+
+        // ideal
+        // $customerService->register($request)
+        // return response()->json(
+        //     $customerService->getResponse(),
+        //     $customerService->getResponseStatus()
+        // );
+        
+        // Outra Abordagem para resolver requests
+        // return $customerService->handler($request, 'register');
     }
 
     /**
